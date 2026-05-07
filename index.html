@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肇庆绿宝石电子科技股份有限公司 - 电容器制造商</title>
+<meta name="description" content="一家肇庆市技术改造成效突出的企业；公司成立于2004年，集铝电解电容器、固态电容器和超级电容研发、制造和销售为一体的国家火炬计划重点高新技术企业">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0A3D62;
+    --primary-light: #1A5276;
+    --accent: #C0392B;
+    --accent-light: #E74C3C;
+    --gold: #D4A017;
+    --dark: #1C2833;
+    --gray: #566573;
+    --light-gray: #F8F9FA;
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background: var(--white);
+  }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  /* ===== HEADER ===== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 61, 98, 0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 72px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--gold) 0%, #F39C12 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -1px;
+  }
+  .logo-text {
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 1px;
+  }
+  .logo-text span {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.7;
+    letter-spacing: 2px;
+  }
+  .nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+  .nav a {
+    color: rgba(255,255,255,0.85);
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+  .nav a:hover, .nav a.active {
+    color: white;
+    background: rgba(255,255,255,0.1);
+  }
+  .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  .nav a:hover::after { width: 20px; }
+  .header-cta {
+    margin-left: 24px;
+    background: linear-gradient(135deg, var(--gold), #E67E22);
+    color: white;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212,160,23,0.3);
+  }
+  .header-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212,160,23,0.4); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0A3D62 0%, #1A5276 40%, #0E4D7A 70%, #0A3D62 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-particles {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(212,160,23,0.15);
+    animation: float 6s ease-in-out infinite;
+  }
+  .particle:nth-child(1) { width: 300px; height: 300px; top: -50px; right: -50px; animation-delay: 0s; }
+  .particle:nth-child(2) { width: 200px; height: 200px; bottom: 10%; left: -30px; animation-delay: 2s; }
+  .particle:nth-child(3) { width: 150px; height: 150px; top: 40%; right: 20%; animation-delay: 4s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translateY(-30px) rotate(5deg); opacity: 1; }
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,160,23,0.15);
+    border: 1px solid rgba(212,160,23,0.3);
+    color: var(--gold);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: '★';
+    font-size: 10px;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 520px;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), #E67E22);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(212,160,23,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 35px rgba(212,160,23,0.45); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 48px;
+    width: 100%;
+    max-width: 480px;
+  }
+  .hero-card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold), #E67E22);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    font-size: 36px;
+    box-shadow: 0 8px 30px rgba(212,160,23,0.3);
+  }
+  .hero-card h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .hero-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .hero-card-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .hero-card-feature {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+  .hero-card-feature .num {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold);
+  }
+  .hero-card-feature .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section {
+    padding: 100px 0;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10,61,98,0.06);
+    color: var(--primary);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .section-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  .section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), #E67E22);
+    border-radius: 4px;
+    margin: 20px auto 0;
+  }
+
+  /* ===== ABOUT ===== */
+  .about { background: white; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #0A3D62 0%, #1A5276 50%, #0E4D7A 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .about-img-main::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .about-img-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+  }
+  .about-factory-icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 48px;
+  }
+  .about-img-content h3 {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .about-img-content p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+  }
+  .about-year-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: linear-gradient(135deg, var(--gold), #E67E22);
+    color: white;
+    padding: 20px 28px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(212,160,23,0.35);
+    z-index: 2;
+  }
+  .about-year-badge .year {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .about-year-badge .txt {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+  .about-content { }
+  .about-content .section-label { margin-bottom: 12px; }
+  .about-content h2 {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .about-content h2 em { font-style: normal; color: var(--accent); }
+  .about-text {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.85;
+    margin-bottom: 32px;
+  }
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .about-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .about-highlight:hover {
+    background: rgba(10,61,98,0.05);
+    transform: translateY(-2px);
+  }
+  .about-highlight-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .about-highlight h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 2px;
+  }
+  .about-highlight p {
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .about-tag {
+    padding: 6px 14px;
+    background: rgba(10,61,98,0.06);
+    color: var(--primary);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-bar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+    align-self: stretch;
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products { background: var(--light-gray); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), #E67E22);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .product-card:hover::before { opacity: 1; }
+  .product-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-img-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    position: relative;
+  }
+  .product-img-bg.bg-1 { background: linear-gradient(135deg, #0A3D62, #1A5276); }
+  .product-img-bg.bg-2 { background: linear-gradient(135deg, #1A5276, #2E86C1); }
+  .product-img-bg.bg-3 { background: linear-gradient(135deg, #6C3483, #9B59B6); }
+  .product-img-bg.bg-4 { background: linear-gradient(135deg, #1E8449, #27AE60); }
+  .product-img-bg.bg-5 { background: linear-gradient(135deg, #784212, #E67E22); }
+  .product-body { padding: 28px; }
+  .product-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  .product-body p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .product-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .product-tag {
+    padding: 4px 10px;
+    background: rgba(10,61,98,0.06);
+    color: var(--primary);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+  }
+  .product-link:hover { gap: 10px; color: var(--accent); }
+
+  /* ===== WHY CHOOSE US ===== */
+  .why { background: white; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .why-card {
+    text-align: center;
+    padding: 40px 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: white;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), #E67E22);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+  .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .why-card:hover::after { transform: scaleX(1); }
+  .why-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(10,61,98,0.08), rgba(10,61,98,0.04));
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    transition: all 0.3s ease;
+  }
+  .why-card:hover .why-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    transform: scale(1.1);
+  }
+  .why-card:hover .why-icon .icon-emoji { filter: brightness(10); }
+  .why-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  .why-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ===== NEWS ===== */
+  .news { background: var(--light-gray); }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .news-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+  }
+  .news-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .news-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+  .news-img-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+  }
+  .news-img-bg.nbg-1 { background: linear-gradient(135deg, #0A3D62, #1A5276); }
+  .news-img-bg.nbg-2 { background: linear-gradient(135deg, #784212, #E67E22); }
+  .news-img-bg.nbg-3 { background: linear-gradient(135deg, #1E8449, #27AE60); }
+  .news-body { padding: 24px; }
+  .news-date {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .news-body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .news-body p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); color: white; }
+  .contact .section-label { background: rgba(255,255,255,0.1); color: var(--gold); }
+  .contact .section-title { color: white; }
+  .contact .section-desc { color: rgba(255,255,255,0.6); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .contact-info { }
+  .contact-info h2 {
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+  }
+  .contact-info > p {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+  .contact-items { display: flex; flex-direction: column; gap: 24px; }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .contact-item-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .contact-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .contact-item p, .contact-item a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+  .contact-item a:hover { color: var(--gold); }
+  .contact-form {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 40px;
+  }
+  .contact-form h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 28px;
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.3);
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.08);
+  }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #E67E22);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(212,160,23,0.3);
+    font-family: inherit;
+  }
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(212,160,23,0.4);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--dark);
+    padding: 60px 0 0;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand p {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.4);
+    max-width: 280px;
+  }
+  .footer h4 {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .footer ul li { margin-bottom: 10px; }
+  .footer ul li a {
+    color: rgba(255,255,255,0.45);
+    transition: color 0.3s ease;
+    font-size: 13px;
+  }
+  .footer ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ===== SCROLL TOP ===== */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--gold), #E67E22);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(212,160,23,0.3);
+    z-index: 999;
+    font-size: 20px;
+    color: white;
+  }
+  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top:hover { transform: translateY(-4px); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { display: none; }
+    .hero h1 { font-size: 38px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    .section { padding: 70px 0; }
+    .container { padding: 0 20px; }
+    .section-title { font-size: 30px; }
+    .hero h1 { font-size: 30px; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    .hero-btns { flex-direction: column; }
+    .nav { display: none; }
+    .header-inner { padding: 0 20px; }
+    .about-highlights { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .news-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-num { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">B</div>
+      <div class="logo-text">
+        绿宝石
+        <span>BERYL</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="#home" class="active">网站首页</a>
+      <a href="#products">产品中心</a>
+      <a href="#about">关于我们</a>
+      <a href="#news">新闻资讯</a>
+      <a href="#contact">联系我们</a>
+    </nav>
+    <a href="#contact" class="header-cta">立即咨询</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">国家专精特新"小巨人"企业</div>
+      <h1>肇庆绿宝石<br><em>电子科技</em>股份有限公司</h1>
+      <p class="hero-sub">一家集铝电解电容器、固态电容器、超级电容器及模组研发、制造和销售为一体的国家火炬计划重点高新技术企业。产品广泛应用于LED电源、舞台功放、车载电子、网络通讯、医疗设备等领域。</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">了解产品 →</a>
+        <a href="#about" class="btn-outline">公司简介</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">22+</div>
+          <div class="hero-stat-label">年电容器研发经验</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-label">大研发中心</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-label">大制造基地</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">⚡</div>
+        <h3>全系列电容器解决方案</h3>
+        <p>从铝电解到固态到超级电容，提供全品类电容器产品与定制化方案。</p>
+        <div class="hero-card-features">
+          <div class="hero-card-feature">
+            <div class="num">5+</div>
+            <div class="label">产品品类</div>
+          </div>
+          <div class="hero-card-feature">
+            <div class="num">100+</div>
+            <div class="label">合作品牌</div>
+          </div>
+          <div class="hero-card-feature">
+            <div class="num">20+</div>
+            <div class="label">出口国家</div>
+          </div>
+          <div class="hero-card-feature">
+            <div class="num">ISO</div>
+            <div class="label">质量认证</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-main">
+          <div class="about-img-content">
+            <div class="about-factory-icon">🏭</div>
+            <h3>肇庆绿宝石电子科技股份有限公司</h3>
+            <p>电容器研发 · 制造 · 销售</p>
+          </div>
+        </div>
+        <div class="about-year-badge">
+          <div class="year">2004</div>
+          <div class="txt">创立于</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">ABOUT US</div>
+        <h2>专注电容器领域<br><em>22年</em>创新研发</h2>
+        <p class="about-text">肇庆绿宝石电子科技股份有限公司成立于2004年3月25日，公司注册资本5745.9665万元，经营地址位于肇庆市端州区肇庆大道南侧、端州八路西侧2区厂区，法定代表人为刘泳澎。是一家集铝电解电容器、固态电容器、超级电容器及模组研发、制造和销售为一体的国家专精特新"小巨人"企业。</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🔬</div>
+            <div>
+              <h4>研发创新</h4>
+              <p>持续技术突破</p>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🏆</div>
+            <div>
+              <h4>专精特新</h4>
+              <p>国家小巨人企业</p>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🌡️</div>
+            <div>
+              <h4>高可靠性</h4>
+              <p>宽温度范围应用</p>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🌍</div>
+            <div>
+              <h4>全球供应</h4>
+              <p>出口20+国家</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-tags">
+          <span class="about-tag">铝电解电容器</span>
+          <span class="about-tag">固态电容器</span>
+          <span class="about-tag">超级电容器</span>
+          <span class="about-tag">固液混合电容</span>
+          <span class="about-tag">MLPC</span>
+          <span class="about-tag">ISO认证</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">22+</div>
+        <div class="stat-label">年行业经验</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5745</div>
+        <div class="stat-label">注册资本（万元）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">制造基地</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">研发中心</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products" id="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">PRODUCTS</div>
+      <h2 class="section-title">核心<em>产品</em>系列</h2>
+      <p class="section-desc"> BERYL"电容广泛应用于LED灯驱动电源、电子节能灯和镇流器、舞台功放、车载电子设备、电脑主板、安防产品、变频器、网络通讯、医疗设备电源、UPS等高端领域。</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg bg-1">🔋</div>
+        </div>
+        <div class="product-body">
+          <h3>高分子固态铝电解电容器</h3>
+          <p>采用导电高分子材料，具更低ESR、更高纹波电流、更长寿命特性，适用于高端电源、服务器等场景。</p>
+          <div class="product-tags">
+            <span class="product-tag">低ESR</span>
+            <span class="product-tag">长寿命</span>
+            <span class="product-tag">高纹波</span>
+          </div>
+          <a href="#" class="product-link">了解详情 →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg bg-2">⚡</div>
+        </div>
+        <div class="product-body">
+          <h3>高分子固液混合铝电解电容器</h3>
+          <p>结合固态与液态电解质优势，兼具高容量与高可靠性，工作温度范围宽，适用汽车电子、工业控制等。</p>
+          <div class="product-tags">
+            <span class="product-tag">宽温</span>
+            <span class="product-tag">高可靠</span>
+            <span class="product-tag">汽车级</span>
+          </div>
+          <a href="#" class="product-link">了解详情 →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg bg-3">🔌</div>
+        </div>
+        <div class="product-body">
+          <h3>超级电容器</h3>
+          <p>法拉级大容量，瞬间充放电，循环寿命可达数十万次，适用于储能、峰值补偿、备用电源等应用。</p>
+          <div class="product-tags">
+            <span class="product-tag">大容量</span>
+            <span class="product-tag">快充放</span>
+            <span class="product-tag">长寿命</span>
+          </div>
+          <a href="#" class="product-link">了解详情 →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg bg-4">📟</div>
+        </div>
+        <div class="product-body">
+          <h3>铝电解电容器</h3>
+          <p>通用型铝电解电容，规格齐全，品质稳定，广泛应用于消费电子、电源适配器、照明等领域。</p>
+          <div class="product-tags">
+            <span class="product-tag">通用型</span>
+            <span class="product-tag">规格全</span>
+            <span class="product-tag">性价比</span>
+          </div>
+          <a href="#" class="product-link">了解详情 →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg bg-5">💾</div>
+        </div>
+        <div class="product-body">
+          <h3>叠层导电高分子铝电容器（MLPC）</h3>
+          <p>超低剖面设计，叠层结构实现更高容量密度，适用于便携设备、固态硬盘等空间敏感型应用。</p>
+          <div class="product-tags">
+            <span class="product-tag">超薄</span>
+            <span class="product-tag">高密度</span>
+            <span class="product-tag">便携</span>
+          </div>
+          <a href="#" class="product-link">了解详情 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">ADVANTAGES</div>
+      <h2 class="section-title">为什么选择<em>绿宝石</em></h2>
+      <p class="section-desc">22年深耕电容器领域，以技术创新和品质优先为核心竞争力</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><span class="icon-emoji">🔬</span></div>
+        <h3>技术研发实力</h3>
+        <p>拥有省级工程技术研究中心，持续投入研发，持有多项电容器核心专利技术。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><span class="icon-emoji">✅</span></div>
+        <h3>严苛品质管控</h3>
+        <p>通过ISO9001、IATF16949等国际认证，全流程品质管控，确保每颗电容器性能稳定。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><span class="icon-emoji">🤝</span></div>
+        <h3>快速响应服务</h3>
+        <p>专业技术团队提供选型支持，灵活定制方案，准时交付，满足客户多样化需求。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><span class="icon-emoji">🌱</span></div>
+        <h3>绿色可持续发展</h3>
+        <p>践行绿色制造理念，产品符合RoHS、REACH等环保标准，助力低碳未来。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section news" id="news">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">NEWS</div>
+      <h2 class="section-title">新闻<em>资讯</em></h2>
+      <p class="section-desc">了解绿宝石最新动态与行业资讯</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-img-bg nbg-1">📰</div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">2026年4月</div>
+          <h3>绿宝石参加国际电子元器件展，展示全系列电容器产品</h3>
+          <p>在本次展会上，绿宝石携多款高性能电容器产品亮相，吸引众多国内外客户驻足交流。</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-img-bg nbg-2">🏆</div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">2026年3月</div>
+          <h3>公司荣获"年度优秀供应商"称号，品质与服务获客户认可</h3>
+          <p>绿宝石凭借稳定的产品质量和优质的服务体系，荣获多家战略客户年度优秀供应商荣誉。</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-img-bg nbg-3">🔋</div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">2026年2月</div>
+          <h3>超级电容器生产线扩产完成，产能提升30%</h3>
+          <p>为满足市场快速增长的需求，绿宝石完成了超级电容器生产线的升级扩产，产能大幅提升。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">CONTACT</div>
+      <h2 class="section-title">联系我们</h2>
+      <p class="section-desc">期待与您建立合作关系，共创价值</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>肇庆绿宝石电子科技股份有限公司</h2>
+        <p>绿宝石经营者以"创造利润，打造名牌，分享成果，永续经营"的理念务实经营企业，坚决贯彻"品质取信，服务取胜，变革创新，超越期望"的质量方针。</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <h4>公司地址</h4>
+              <p>肇庆市端州区肇庆大道南侧、端州八路西侧2区厂区</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <div>
+              <h4>电子邮箱</h4>
+              <a href="mailto:gzycypcd@126.com">gzycypcd@126.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💻</div>
+            <div>
+              <h4>官方网站</h4>
+              <p>www.zq-beryl.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📅</div>
+            <div>
+              <h4>成立时间</h4>
+              <p>2004年3月25日</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>发送询价</h3>
+        <form onsubmit="event.preventDefault(); alert('感谢您的询价！我们会尽快与您联系。');">
+          <div class="form-row">
+            <div class="form-group">
+              <label>您的姓名</label>
+              <input type="text" placeholder="请输入姓名" required>
+            </div>
+            <div class="form-group">
+              <label>联系电话</label>
+              <input type="tel" placeholder="请输入电话" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>电子邮箱</label>
+            <input type="email" placeholder="请输入邮箱">
+          </div>
+          <div class="form-group">
+            <label>您感兴趣的产品</label>
+            <input type="text" placeholder="如：高分子固态铝电解电容器">
+          </div>
+          <div class="form-group">
+            <label>留言内容</label>
+            <textarea placeholder="请描述您的需求..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">提交询价 →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:0">
+          <div class="logo-icon">B</div>
+          <div class="logo-text">绿宝石<span>BERYL</span></div>
+        </div>
+        <p>肇庆绿宝石电子科技股份有限公司 — 专注电容器研发制造22年，国家专精特新"小巨人"企业。</p>
+      </div>
+      <div>
+        <h4>产品中心</h4>
+        <ul>
+          <li><a href="#">高分子固态铝电解电容</a></li>
+          <li><a href="#">固液混合铝电解电容</a></li>
+          <li><a href="#">超级电容器</a></li>
+          <li><a href="#">铝电解电容器</a></li>
+          <li><a href="#">MLPC</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>客户中心</h4>
+        <ul>
+          <li><a href="#">前沿技术</a></li>
+          <li><a href="#">选型指南</a></li>
+          <li><a href="#">使用指南</a></li>
+          <li><a href="#">解决方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="#">公司简介</a></li>
+          <li><a href="#">董事长致辞</a></li>
+          <li><a href="#">企业荣誉</a></li>
+          <li><a href="#">企业环境</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 肇庆绿宝石电子科技股份有限公司 版权所有 | www.zq-beryl.com
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL TOP -->
+<div class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.product-card, .news-card, .why-card, .about-highlight').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Scroll to top button
+  window.addEventListener('scroll', () => {
+    const btn = document.querySelector('.scroll-top');
+    btn.classList.toggle('visible', window.scrollY > 500);
+  });
+
+  // Active nav link
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a');
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Smooth scroll for nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
