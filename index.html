@@ -75,6 +75,31 @@
   .carousel-progress-bar {
     height: 100%;
     background: white;
+  }
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.35);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+  .carousel-arrow:hover {
+    background: rgba(0,0,0,0.6);
+  }
+  .carousel-arrow-left { left: 20px; }
+  .carousel-arrow-right { right: 20px; 
     width: 0%;
     transition: width 0.1s linear;
   }
@@ -440,7 +465,6 @@
   .about-img-main {
     width: 100%;
     aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #0A3D62 0%, #1A5276 50%, #0E4D7A 100%);
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -449,11 +473,10 @@
     justify-content: center;
     box-shadow: var(--shadow-lg);
   }
-  .about-img-main::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  .about-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .about-img-content {
     text-align: center;
@@ -660,10 +683,13 @@
     position: relative;
   }
   .product-img-bg.bg-1 { background: linear-gradient(135deg, #0A3D62, #1A5276); }
-  .product-img-bg.bg-2 { background: linear-gradient(135deg, #1A5276, #2E86C1); }
   .product-img-bg.bg-3 { background: linear-gradient(135deg, #6C3483, #9B59B6); }
-  .product-img-bg.bg-4 { background: linear-gradient(135deg, #1E8449, #27AE60); }
   .product-img-bg.bg-5 { background: linear-gradient(135deg, #784212, #E67E22); }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .product-body { padding: 28px; }
   .product-body h3 {
     font-size: 18px;
@@ -1038,6 +1064,8 @@
       <img src="banner-pic/首页轮播图/海报4.png" alt="全球供应">
     </div>
   </div>
+  <button class="carousel-arrow carousel-arrow-left" id="carouselPrev" aria-label="上一张">‹</button>
+  <button class="carousel-arrow carousel-arrow-right" id="carouselNext" aria-label="下一张">›</button>
   <div class="carousel-progress"><div class="carousel-progress-bar" id="progressBar"></div></div>
   <div class="carousel-dots" id="carouselDots"></div>
 </div>
@@ -1074,14 +1102,14 @@
     <div class="hero-content">
       <div class="hero-badge">国家专精特新"小巨人"企业</div>
       <h1>佛山市富盛容科电子有限公司<br></h1>
-      <p class="hero-sub">一家集铝电解电容器、固态电容器、超级电容器及模组研发、制造和销售为一体的国家火炬计划重点高新技术企业。产品广泛应用于LED电源、舞台功放、车载电子、网络通讯、医疗设备等领域。</p>
+      <p class="hero-sub">富盛容科，不仅是一个名称，更是一份承诺：以“富”裕之技术，“盛”产优质器件；“容”载信任，“科”创未来。我们致力成为客户心中最可信赖的合作伙伴，为产业发展注入稳定而强劲的“电容”之力。</p>
       <div class="hero-btns">
         <a href="#products" class="btn-primary">了解产品 →</a>
         <a href="#about" class="btn-outline">公司简介</a>
       </div>
       <div class="hero-stats">
         <div>
-          <div class="hero-stat-num">22+</div>
+          <div class="hero-stat-num">10+</div>
           <div class="hero-stat-label">年电容器研发经验</div>
         </div>
         <div>
@@ -1128,21 +1156,14 @@
     <div class="about-grid">
       <div class="about-visual">
         <div class="about-img-main">
-          <div class="about-img-content">
-            <div class="about-factory-icon">🏭</div>
-            <h3>富盛容科</h3>
-            <p>电容器研发 · 制造 · 销售</p>
-          </div>
+          <img src="images/about-company.png" alt="富盛容科公司介绍">
         </div>
-        <div class="about-year-badge">
-          <div class="year">2004</div>
-          <div class="txt">创立于</div>
-        </div>
+        
       </div>
       <div class="about-content">
-        <div class="section-label">ABOUT US</div>
-        <h2>专注电容器领域<br><em>22年</em>创新研发</h2>
-        <p class="about-text">富盛容科成立于2004年3月25日，公司注册资本5745.9665万元，经营地址位于肇庆市端州区肇庆大道南侧、端州八路西侧2区厂区，法定代表人为刘泳澎。是一家集铝电解电容器、固态电容器、超级电容器及模组研发、制造和销售为一体的国家专精特新"小巨人"企业。</p>
+        <div class="section-label">关于我们</div>
+        <h2>专注电容器领域<br><em>十余年</em>深厚积淀</h2>
+        <p class="about-text">富盛容科电子有限公司，历经风雨，初心不改。如今，我们以崭新的面貌重组启航，承袭过往精湛工艺与品质承诺，专注于各类电解电容器的研发、生产与销售。公司立足于坚实的产业基础，凭借成熟的技术团队、稳定的供应链体系与现代化的管理体系，年产值目标达10000万元人民币。我们致力于为客户提供性能卓越、品质可靠的电容器产品及解决方案，广泛应用于电源、照明、家电、工业控制等多个领域。 </p>
         <div class="about-highlights">
           <div class="about-highlight">
             <div class="about-highlight-icon">🔬</div>
@@ -1220,7 +1241,7 @@
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img">
-          <div class="product-img-bg bg-1">🔋</div>
+          <img src="images/solid-capacitor.jpg" alt="高分子固态铝电解电容器">
         </div>
         <div class="product-body">
           <h3>高分子固态铝电解电容器</h3>
@@ -1235,22 +1256,7 @@
       </div>
       <div class="product-card">
         <div class="product-img">
-          <div class="product-img-bg bg-2">⚡</div>
-        </div>
-        <div class="product-body">
-          <h3>高分子固液混合铝电解电容器</h3>
-          <p>结合固态与液态电解质优势，兼具高容量与高可靠性，工作温度范围宽，适用汽车电子、工业控制等。</p>
-          <div class="product-tags">
-            <span class="product-tag">宽温</span>
-            <span class="product-tag">高可靠</span>
-            <span class="product-tag">汽车级</span>
-          </div>
-          <a href="#" class="product-link">了解详情 →</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img">
-          <div class="product-img-bg bg-4">📟</div>
+          <img src="images/aluminum-capacitor.png" alt="铝电解电容器">
         </div>
         <div class="product-body">
           <h3>铝电解电容器</h3>
@@ -1573,11 +1579,17 @@
     if (Math.abs(diff) > 50) { goTo(current + (diff > 0 ? 1 : -1)); }
   }, { passive: true });
 
+  // Arrow button support
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
   resetAutoplay();
 })();
 
   // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
+  const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
@@ -1590,7 +1602,7 @@
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease';
-    observer.observe(el);
+    scrollObserver.observe(el);
   });
 
   // Scroll to top button
