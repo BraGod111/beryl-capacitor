@@ -25,85 +25,32 @@
   html { scroll-behavior: smooth; }
 
   /* ===== CAROUSEL ===== */
+  /* ===== CAROUSEL ===== */
   .carousel {
     position: relative;
     width: 100%;
+    height: 520px;
     overflow: hidden;
     background: var(--dark);
   }
   .carousel-track {
     display: flex;
+    height: 100%;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .carousel-slide {
     min-width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
+    height: 100%;
   }
   .carousel-slide img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
     object-fit: cover;
+    display: block;
   }
-  .carousel-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 1;
-    background: linear-gradient(135deg, rgba(10,61,98,0.7) 0%, rgba(26,82,118,0.5) 50%, rgba(10,61,98,0.3) 100%);
-  }
-  .carousel-content {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 1280px;
-    width: 100%;
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-  }
-  .carousel-text { flex: 1; }
-  .carousel-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(212,160,23,0.2);
-    border: 1px solid rgba(212,160,23,0.4);
-    color: var(--gold);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-  }
-  .carousel-text h2 {
-    font-size: 44px;
-    font-weight: 900;
-    color: white;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  }
-  .carousel-text h2 em { font-style: normal; color: var(--gold); }
-  .carousel-text p {
-    font-size: 16px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.8;
-    max-width: 480px;
-    margin-bottom: 32px;
-    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
-  }
-  .carousel-btns { display: flex; gap: 16px; }
   .carousel-dots {
     position: absolute;
-    bottom: 24px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -120,7 +67,7 @@
     border: none;
   }
   .carousel-dot.active {
-    background: var(--gold);
+    background: white;
     width: 28px;
     border-radius: 5px;
   }
@@ -133,17 +80,13 @@
   }
   .carousel-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--gold), #E67E22);
+    background: white;
     width: 0%;
     transition: width 0.1s linear;
   }
 
   @media (max-width: 768px) {
-    .carousel-content { padding: 0 20px; flex-direction: column; text-align: center; }
-    .carousel-text h2 { font-size: 28px; }
-    .carousel-text p { font-size: 14px; }
-    .carousel-visual { display: none; }
-    .carousel-btns { justify-content: center; }
+    .carousel { height: 260px; }
   }
 
   body {
@@ -1088,70 +1031,22 @@
 <!-- CAROUSEL -->
 <div class="carousel" id="heroCarousel">
   <div class="carousel-track" id="carouselTrack">
-    <!-- Slide 1 -->
     <div class="carousel-slide">
       <img src="banner-pic/首页轮播图/海报图1.jpg" alt="富盛容科">
-      <div class="carousel-overlay"></div>
-      <div class="carousel-content">
-        <div class="carousel-text">
-          <div class="carousel-badge">★ 国家专精特新"小巨人"企业</div>
-          <h2>佛山市富盛容科<br><em>电子有限公司</em></h2>
-          <p>一家集铝电解电容器、固态电容器及模组研发、制造和销售为一体的高端电容器制造商，产品广泛应用于LED电源、汽车电子、网络通讯、医疗设备等领域。</p>
-          <div class="carousel-btns">
-            <a href="#products" class="btn-primary">了解产品 →</a>
-            <a href="#contact" class="btn-outline">联系我们</a>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- Slide 2 -->
     <div class="carousel-slide">
       <img src="banner-pic/首页轮播图/海报图2.jpg" alt="全系列电容器">
-      <div class="carousel-overlay"></div>
-      <div class="carousel-content">
-        <div class="carousel-text">
-          <div class="carousel-badge">★ 22年专注电容器研发</div>
-          <h2>全系列<em>电容器</em><br>解决方案</h2>
-          <p>专注于高分子固态铝电解电容、固液混合铝电解电容及铝电解电容三大核心产品，提供定制化技术方案，满足不同行业客户的多元化需求。</p>
-          <div class="carousel-btns">
-            <a href="#products" class="btn-primary">查看产品 →</a>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- Slide 3 -->
     <div class="carousel-slide">
       <img src="banner-pic/首页轮播图/海报图3.png" alt="先进制造">
-      <div class="carousel-overlay"></div>
-      <div class="carousel-content">
-        <div class="carousel-text">
-          <div class="carousel-badge">★ 智造升级</div>
-          <h2>先进制造<br><em>品质优先</em></h2>
-          <p>拥有现代化制造基地和省级工程技术研究中心，通过ISO9001、IATF16949等国际认证，全流程品质管控，每一颗电容器都经过严苛测试。</p>
-          <div class="carousel-btns">
-            <a href="#about" class="btn-primary">了解更多 →</a>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- Slide 4 -->
     <div class="carousel-slide">
       <img src="banner-pic/首页轮播图/海报4.png" alt="全球供应">
-      <div class="carousel-overlay"></div>
-      <div class="carousel-content">
-        <div class="carousel-text">
-          <div class="carousel-badge">★ 全球供应</div>
-          <h2>出口<em>20+</em>国家<br>值得信赖</h2>
-          <p>富盛容科电容器远销全球，与众多世界500强企业及行业领军品牌建立长期战略合作关系，以可靠品质和专业服务赢得市场口碑。</p>
-          <div class="carousel-btns">
-            <a href="#contact" class="btn-primary">立即咨询 →</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div class="carousel-progress"><div class="carousel-progress-bar" id="progressBar"></div></div>
   <div class="carousel-dots" id="carouselDots"></div>
+</div>
 </div>
 
 
