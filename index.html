@@ -28,51 +28,40 @@
   .carousel {
     position: relative;
     width: 100%;
-    height: 560px;
     overflow: hidden;
     background: var(--dark);
   }
   .carousel-track {
     display: flex;
-    height: 100%;
-    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .carousel-slide {
     min-width: 100%;
-    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
   }
-  .carousel-bg {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 0;
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
   }
-  .carousel-bg::after {
-    content: '';
+  .carousel-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, rgba(10,61,98,0.85) 0%, rgba(26,82,118,0.7) 50%, rgba(10,61,98,0.5) 100%);
-  }
-  .slide-bg-1 { background: linear-gradient(135deg, #0A3D62 0%, #1A5276 50%, #0E4D7A 100%); }
-  .slide-bg-2 { background: linear-gradient(135deg, #1A3A2A 0%, #1E5C3A 50%, #0E4D3A 100%); }
-  .slide-bg-3 { background: linear-gradient(135deg, #3A1A0E 0%, #5C2E1E 50%, #4D1E0E 100%); }
-  .slide-bg-4 { background: linear-gradient(135deg, #1A1A3D 0%, #2E2E5C 50%, #1E1E4D 100%); }
-  .carousel-pattern {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: radial-gradient(circle at 20% 50%, rgba(212,160,23,0.08) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(212,160,23,0.05) 0%, transparent 40%);
     z-index: 1;
+    background: linear-gradient(135deg, rgba(10,61,98,0.7) 0%, rgba(26,82,118,0.5) 50%, rgba(10,61,98,0.3) 100%);
   }
   .carousel-content {
-    position: relative;
+    position: absolute;
     z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 40px;
     width: 100%;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,39 +89,21 @@
     line-height: 1.2;
     margin-bottom: 16px;
     letter-spacing: -0.5px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
   .carousel-text h2 em { font-style: normal; color: var(--gold); }
   .carousel-text p {
     font-size: 16px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.85);
     line-height: 1.8;
     max-width: 480px;
     margin-bottom: 32px;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
   }
   .carousel-btns { display: flex; gap: 16px; }
-  .carousel-visual {
-    flex-shrink: 0;
-    width: 340px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .carousel-icon-big {
-    width: 200px;
-    height: 200px;
-    background: rgba(255,255,255,0.06);
-    border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  }
   .carousel-dots {
     position: absolute;
-    bottom: 32px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -143,7 +114,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.4);
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
@@ -153,36 +124,11 @@
     width: 28px;
     border-radius: 5px;
   }
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 22px;
-    color: white;
-    backdrop-filter: blur(5px);
-  }
-  .carousel-arrow:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.4);
-  }
-  .carousel-arrow.prev { left: 24px; }
-  .carousel-arrow.next { right: 24px; }
   .carousel-progress {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 3px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
     z-index: 10;
   }
   .carousel-progress-bar {
@@ -193,7 +139,6 @@
   }
 
   @media (max-width: 768px) {
-    .carousel { height: 480px; }
     .carousel-content { padding: 0 20px; flex-direction: column; text-align: center; }
     .carousel-text h2 { font-size: 28px; }
     .carousel-text p { font-size: 14px; }
@@ -1145,8 +1090,8 @@
   <div class="carousel-track" id="carouselTrack">
     <!-- Slide 1 -->
     <div class="carousel-slide">
-      <div class="carousel-bg slide-bg-1"></div>
-      <div class="carousel-pattern"></div>
+      <img src="banner-pic/首页轮播图/海报图1.jpg" alt="富盛容科">
+      <div class="carousel-overlay"></div>
       <div class="carousel-content">
         <div class="carousel-text">
           <div class="carousel-badge">★ 国家专精特新"小巨人"企业</div>
@@ -1157,15 +1102,12 @@
             <a href="#contact" class="btn-outline">联系我们</a>
           </div>
         </div>
-        <div class="carousel-visual">
-          <div class="carousel-icon-big">⚡</div>
-        </div>
       </div>
     </div>
     <!-- Slide 2 -->
     <div class="carousel-slide">
-      <div class="carousel-bg slide-bg-2"></div>
-      <div class="carousel-pattern"></div>
+      <img src="banner-pic/首页轮播图/海报图2.jpg" alt="全系列电容器">
+      <div class="carousel-overlay"></div>
       <div class="carousel-content">
         <div class="carousel-text">
           <div class="carousel-badge">★ 22年专注电容器研发</div>
@@ -1175,15 +1117,12 @@
             <a href="#products" class="btn-primary">查看产品 →</a>
           </div>
         </div>
-        <div class="carousel-visual">
-          <div class="carousel-icon-big">🔋</div>
-        </div>
       </div>
     </div>
     <!-- Slide 3 -->
     <div class="carousel-slide">
-      <div class="carousel-bg slide-bg-3"></div>
-      <div class="carousel-pattern"></div>
+      <img src="banner-pic/首页轮播图/海报图3.png" alt="先进制造">
+      <div class="carousel-overlay"></div>
       <div class="carousel-content">
         <div class="carousel-text">
           <div class="carousel-badge">★ 智造升级</div>
@@ -1193,15 +1132,12 @@
             <a href="#about" class="btn-primary">了解更多 →</a>
           </div>
         </div>
-        <div class="carousel-visual">
-          <div class="carousel-icon-big">🏭</div>
-        </div>
       </div>
     </div>
     <!-- Slide 4 -->
     <div class="carousel-slide">
-      <div class="carousel-bg slide-bg-4"></div>
-      <div class="carousel-pattern"></div>
+      <img src="banner-pic/首页轮播图/海报4.png" alt="全球供应">
+      <div class="carousel-overlay"></div>
       <div class="carousel-content">
         <div class="carousel-text">
           <div class="carousel-badge">★ 全球供应</div>
@@ -1211,15 +1147,10 @@
             <a href="#contact" class="btn-primary">立即咨询 →</a>
           </div>
         </div>
-        <div class="carousel-visual">
-          <div class="carousel-icon-big">🌍</div>
-        </div>
       </div>
     </div>
   </div>
   <div class="carousel-progress"><div class="carousel-progress-bar" id="progressBar"></div></div>
-  <button class="carousel-arrow prev" id="carouselPrev">‹</button>
-  <button class="carousel-arrow next" id="carouselNext">›</button>
   <div class="carousel-dots" id="carouselDots"></div>
 </div>
 
@@ -1710,8 +1641,6 @@
 (function() {
   const track = document.getElementById('carouselTrack');
   const dotsContainer = document.getElementById('carouselDots');
-  const prevBtn = document.getElementById('carouselPrev');
-  const nextBtn = document.getElementById('carouselNext');
   const progressBar = document.getElementById('progressBar');
   const slides = track.querySelectorAll('.carousel-slide');
   const total = slides.length;
@@ -1719,7 +1648,7 @@
   let autoplayTimer = null;
   let progressTimer = null;
   let progressStart = null;
-  const AUTOPLAY_DELAY = 5000;
+  const AUTOPLAY_DELAY = 3000;
 
   // Build dots
   slides.forEach((_, i) => {
@@ -1746,21 +1675,15 @@
       const elapsed = Date.now() - progressStart;
       progressBar.style.width = Math.min(100, (elapsed / AUTOPLAY_DELAY) * 100) + '%';
     }, 50);
-    autoplayTimer = setTimeout(() => next(), AUTOPLAY_DELAY);
+    autoplayTimer = setTimeout(() => goTo(current + 1), AUTOPLAY_DELAY);
   }
-
-  function next() { goTo(current + 1); }
-  function prev() { goTo(current - 1); }
-
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
 
   // Touch/swipe support
   let touchStartX = 0;
   track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
   track.addEventListener('touchend', e => {
     const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+    if (Math.abs(diff) > 50) { goTo(current + (diff > 0 ? 1 : -1)); }
   }, { passive: true });
 
   resetAutoplay();
